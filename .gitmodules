@@ -1,0 +1,3 @@
+[submodule "dockeriotor-sh"]
+	path = dockeriotor-sh
+	url = https://github.com/0xluen/dockeriotor-sh

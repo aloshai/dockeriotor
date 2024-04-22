@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/schemas/*": ["src/schemas/*"],
+      "@/services/*": ["src/services/*"],
+      "@/interfaces/*": ["src/interfaces/*"],
+      "@/models/*": ["src/models/*"],
+      "@/modules/*": ["src/modules/*"]
+    },
+    "outDir": "./dist"
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}

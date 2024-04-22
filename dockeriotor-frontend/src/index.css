@@ -1,0 +1,17 @@
+@import url("https://rsms.me/inter/inter.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply text-primary;
+    font-family: "Inter", sans-serif;
+  }
+
+  html,
+  body {
+    @apply bg-black min-h-screen;
+  }
+}
