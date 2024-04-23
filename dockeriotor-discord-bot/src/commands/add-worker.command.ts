@@ -45,7 +45,7 @@ export class AddWorkerCommand extends Command {
 
       const worker = apiResponse.data.data;
 
-      const command = `dockeriotor --user-id ${user.id} --tag ${worker.tag}`;
+      const command = `python main.py --user-id ${user.id} --tag ${worker.tag}`;
 
       const embed = new EmbedBuilder()
         .setTitle("Worker Added")

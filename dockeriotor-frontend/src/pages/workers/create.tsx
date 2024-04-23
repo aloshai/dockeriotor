@@ -152,7 +152,7 @@ export function CreateWorker() {
               3. Run the command to start Dockeriotor
             </h4>
             <div className="p-4 border rounded border-gray-black bg-transparent mt-4 focus:outline-none focus:border-gray-500 transition">
-              {`./dockeriotor.sh --user-id=${user.data.id} --tag=${worker.tag}`}
+              {`python main.py --user-id=${user.data.id} --tag=${worker.tag}`}
             </div>
           </div>
         </div>

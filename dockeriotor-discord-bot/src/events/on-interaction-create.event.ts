@@ -9,8 +9,8 @@ export class OnInteractionCreateEvent {
     const userResponse = await getUser(discordId);
 
     return {
-      ok: !!userResponse.data,
-      user: userResponse.data,
+      ok: !!userResponse.data.data,
+      user: userResponse.data.data,
     };
   }
 

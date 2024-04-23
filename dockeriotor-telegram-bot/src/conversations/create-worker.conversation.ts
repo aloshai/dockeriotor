@@ -39,7 +39,7 @@ export async function createWorkerConversationHandle(
       await ctx.reply("❌ Worker creation failed.");
     }
 
-    const commandText = `dockeriotor --user-id ${(ctx as any).user.id} --tag ${tag}`;
+    const commandText = `python main.py --user-id ${(ctx as any).user.id} --tag ${tag}`;
 
     await ctx.reply(
       `Worker successfully created. 🎉\n\n Command:\n${commandText}`
