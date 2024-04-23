@@ -24,14 +24,14 @@ export class AddWorkerCommand extends Command {
 
   public async onModalInteractionCreate(
     interaction: ModalSubmitInteraction<CacheType>,
-    user: any
+    user: any,
   ) {
     const workerName = interaction.fields.getTextInputValue(
-      AddWorkerFields.WorkerName
+      AddWorkerFields.WorkerName,
     );
 
     const workerCommand = interaction.fields.getTextInputValue(
-      AddWorkerFields.WorkerCommand
+      AddWorkerFields.WorkerCommand,
     );
 
     const formattedWorkerName = workerName.replace(/\s/g, "-").toLowerCase();
@@ -40,7 +40,7 @@ export class AddWorkerCommand extends Command {
       const apiResponse = await createWorker(
         interaction.user.id,
         formattedWorkerName,
-        workerCommand
+        workerCommand,
       );
 
       const worker = apiResponse.data.data;
@@ -50,7 +50,7 @@ export class AddWorkerCommand extends Command {
       const embed = new EmbedBuilder()
         .setTitle("Worker Added")
         .setDescription(
-          `Worker ${worker.tag} added. Run the following command to start the worker:\n\n \`\`\`${command}\`\`\``
+          `Worker ${worker.tag} added. Run the following command to start the worker:\n\n \`\`\`${command}\`\`\``,
         )
         .setColor("#00ff00")
         .setFields([

@@ -1,23 +1,36 @@
 {
   "compilerOptions": {
-    "target": "es2016",
     "module": "commonjs",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": false,
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "incremental": true,
     "skipLibCheck": true,
-    "baseUrl": "./",
+    "allowJs": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@/*": ["src/*"],
-      "@/schemas/*": ["src/schemas/*"],
-      "@/services/*": ["src/services/*"],
-      "@/interfaces/*": ["src/interfaces/*"],
-      "@/models/*": ["src/models/*"],
-      "@/modules/*": ["src/modules/*"]
-    },
-    "outDir": "./dist"
+      "@/*": ["./*"],
+      "@/schemas/*": ["./schemas/*"],
+      "@/services/*": ["./services/*"],
+      "@/interfaces/*": ["./interfaces/*"],
+      "@/models/*": ["./models/*"],
+      "@/modules/*": ["./modules/*"]
+    }
   },
   "ts-node": {
     "require": ["tsconfig-paths/register"]
-  }
+  },
+
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

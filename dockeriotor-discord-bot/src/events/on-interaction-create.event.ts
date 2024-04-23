@@ -22,8 +22,8 @@ export class OnInteractionCreateEvent {
         (command) =>
           command.modals &&
           command.modals.some(
-            (modal) => modal.data.custom_id === interaction.customId
-          )
+            (modal) => modal.data.custom_id === interaction.customId,
+          ),
       );
 
       if (!command) {
@@ -32,7 +32,7 @@ export class OnInteractionCreateEvent {
 
       if (command.authRequired) {
         const { ok, user: userData } = await this.checkAuth(
-          interaction.user.id
+          interaction.user.id,
         );
 
         if (!ok) {
@@ -55,7 +55,7 @@ export class OnInteractionCreateEvent {
     }
 
     const command = bot.commands.find(
-      (command) => command.command.name === interaction.commandName
+      (command) => command.command.name === interaction.commandName,
     );
 
     if (!command) {
