@@ -33,29 +33,6 @@ export class WorkerController {
     return mappedWorkers;
   }
 
-  async getWorkersByUserUID(user: any) {
-    const workers = await this.workerService.getWorkersByUserId(user._id);
-
-    const activeWorkers = await this.workerGateway.getActiveWorkersByUserUID(
-      user.id,
-      true,
-    );
-
-    const mappedWorkers = workers.map((worker) => {
-      const activeWorker = activeWorkers.find(
-        (activeWorker) => activeWorker.tag === worker.tag,
-      );
-
-      return {
-        ...worker.toJSON(),
-        isActive: !!activeWorker,
-        stats: activeWorker?.stats || null,
-      };
-    });
-
-    return mappedWorkers;
-  }
-
   @Get('my')
   @Auth(AuthMethod.Jwt)
   async getMyWorkers(@Req() req: any) {
@@ -148,5 +125,28 @@ export class WorkerController {
     } catch (e) {
       return e.message;
     }
+  }
+
+  async getWorkersByUserUID(user: any) {
+    const workers = await this.workerService.getWorkersByUserId(user._id);
+
+    const activeWorkers = await this.workerGateway.getActiveWorkersByUserUID(
+      user.id,
+      true,
+    );
+
+    const mappedWorkers = workers.map((worker) => {
+      const activeWorker = activeWorkers.find(
+        (activeWorker) => activeWorker.tag === worker.tag,
+      );
+
+      return {
+        ...worker.toJSON(),
+        isActive: !!activeWorker,
+        stats: activeWorker?.stats || null,
+      };
+    });
+
+    return mappedWorkers;
   }
 }

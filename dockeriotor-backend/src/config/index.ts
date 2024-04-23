@@ -1,4 +1,6 @@
 export const config = () => ({
+  mongoUri: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/dockeriotor',
+
   discordBotApiKey: process.env.DISCORD_BOT_API_KEY || 'discord-bot-api-key',
   telegramBotApiKey: process.env.TELEGRAM_BOT_API_KEY || 'telegram-bot-api-key',
   telegramBotToken: process.env.TELEGRAM_BOT_TOKEN || 'telegram-bot-token',

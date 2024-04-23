@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './modules/user/user.module';
 import { WorkerModule } from './modules/worker/worker.module';
 import { AuthModule } from './modules/auth/auth.module';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { config } from './config';
 
 @Module({
@@ -12,7 +12,14 @@ import { config } from './config';
       isGlobal: true,
       load: [config],
     }),
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/api_test'),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+
+      useFactory: async (configService: ConfigService) => ({
+        uri: configService.get('mongoUri'),
+      }),
+    }),
     UserModule,
     WorkerModule,
     AuthModule,
