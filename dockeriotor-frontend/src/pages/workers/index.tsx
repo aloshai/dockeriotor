@@ -28,9 +28,9 @@ export function Workers() {
     <div className="mt-16 max-w-screen-lg w-full mx-auto">
       <h1 className="text-3xl text-white font-semibold">Workers</h1>
       <p className="text-xs mt-2 text-white/50">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate
-        laudantium quibusdam eligendi consequuntur, aliquid repudiandae ullam
-        unde soluta optio dolorem fugit architecto animi molestiae perferendis.
+        All your workers registered to Dockeriotor are listed below. You can see
+        the status of your Workers below, give commands, change your IO.NET
+        command or view the resource usage of Docker Containers.
       </p>
 
       <p className="text-orange-500 text-xs mt-8 px-8 py-4 bg-orange-500/20 rounded">
