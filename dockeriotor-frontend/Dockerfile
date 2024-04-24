@@ -7,8 +7,12 @@ COPY . /app
 RUN npm install
 RUN npm run build
 
-FROM nginx:alpine as runner
+FROM node:18-alpine as runner
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+RUN npm install -g serve
 
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /app
+
+COPY --from=builder /app/dist /app
+
+CMD ["serve", "-s", "/app", "-l", "80"]
