@@ -46,7 +46,7 @@ export function Workers() {
         <a
           href="https://cloud.io.net/worker/devices"
           target="_blank"
-          className="flex items-center gap-2 px-6 py-4 text-xs font-medium text-white border border-gray-black hover:bg-white hover:text-black transition"
+          className="flex items-center gap-2 px-6 py-4 text-xs font-medium text-white border border-gray-black hover:bg-white hover:text-black transition rounded-full"
           data-tooltip-id="create-new-worker"
           data-tooltip-content="Redirects to the IO.NET Worker creation page."
         >
@@ -57,7 +57,7 @@ export function Workers() {
           to={"/workers/create"}
           data-tooltip-id="add-worker-dockeriotor"
           data-tooltip-content="Allows you to register your Worker in Dockeriotor and create commands"
-          className="flex items-center gap-2 px-6 py-4 text-xs font-medium text-white border border-gray-black hover:bg-white hover:text-black transition"
+          className="flex items-center gap-2 px-6 py-4 text-xs font-medium text-white border border-gray-black hover:bg-white hover:text-black transition rounded-full"
         >
           Add Worker Dockeriotor
         </Link>

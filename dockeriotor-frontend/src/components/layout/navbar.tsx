@@ -34,7 +34,7 @@ export function Navbar() {
           Documentation
         </a>
         <a className="hover:underline" href="https://io.net/" target="_blank">
-          IO.NET
+          Official Website
         </a>
         <a
           className="hover:underline"
@@ -58,7 +58,7 @@ export function Navbar() {
             to="/workers"
             className="text-sm px-8 font-semibold py-2 rounded-full border-2 border-white/20 hover:bg-white hover:text-black transition flex items-center"
           >
-            Panel
+            Dashboard
           </Link>
         )}
       </div>
