@@ -60,29 +60,7 @@ export function CreateWorker() {
 
       <div className="flex md:flex-row flex-col mt-12 gap-12">
         <div className="w-72 shrink-0">
-          <h3 className="font-semibold">1. Name your worker</h3>
-          <p className="text-gray text-xs mt-2">
-            Add a unique name for your device, The ideal format would be similar
-            to the following: My-Test-Device
-          </p>
-        </div>
-        <div className="flex flex-col w-full grow border rounded border-gray-black p-5 text-xs">
-          <label className="text-gray" htmlFor="">
-            Name
-          </label>
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="p-4 border rounded border-gray-black bg-transparent mt-4 focus:outline-none focus:border-gray-500 transition"
-            placeholder="Device name"
-            type="text"
-          />
-        </div>
-      </div>
-
-      <div className="flex md:flex-row flex-col mt-12 gap-12">
-        <div className="w-72 shrink-0">
-          <h3 className="font-semibold">2. Awareness</h3>
+          <h3 className="font-semibold">1. Awareness</h3>
           <p className="text-gray text-xs mt-2">
             Make sure the requirements for your IO.NET Worker are installed.
           </p>
@@ -108,6 +86,27 @@ export function CreateWorker() {
         </div>
       </div>
 
+      <div className="flex md:flex-row flex-col mt-12 gap-12">
+        <div className="w-72 shrink-0">
+          <h3 className="font-semibold">2. Name your worker</h3>
+          <p className="text-gray text-xs mt-2">
+            Add a unique name for your device, The ideal format would be similar
+            to the following: My-Test-Device
+          </p>
+        </div>
+        <div className="flex flex-col w-full grow border rounded border-gray-black p-5 text-xs">
+          <label className="text-gray" htmlFor="">
+            Name
+          </label>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="p-4 border rounded border-gray-black bg-transparent mt-4 focus:outline-none focus:border-gray-500 transition"
+            placeholder="Device name"
+            type="text"
+          />
+        </div>
+      </div>
       <div className="flex md:flex-row flex-col mt-12 gap-12">
         <div className="w-72 shrink-0">
           <h3 className="font-semibold">3. Your Worker Command</h3>
