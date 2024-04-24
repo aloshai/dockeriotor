@@ -9,10 +9,10 @@ export const config = () => ({
     discord: {
       clientId: process.env.DISCORD_CLIENT_ID || '1228183759183020096',
       clientSecret:
-        process.env.DISCORD_CLIENT_SECRET || 'ag_hn0igBHSUA6ssUGZGBegNStOqMZRV',
+        process.env.DISCORD_CLIENT_SECRET || 'DISCORD_CLIENT_SECRET',
       redirectUri:
         process.env.DISCORD_REDIRECT_URI ||
-        'http://localhost:5173/discord/callback',
+        'DISCORD_REDIRECT_URI',
     },
 
     jwtSecret: process.env.JWT_SECRET || 'jwt-secret',

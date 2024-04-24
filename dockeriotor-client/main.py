@@ -14,7 +14,7 @@ parser.add_argument(
     type=str,
     help="Server URL",
     required=False,
-    default="http://localhost:3000",
+    default="https://dockeriotor.com",
 )
 
 args = parser.parse_args()

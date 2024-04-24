@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: process.env.API_URL || "https://api.dockeriotor.com",
 });
 
 apiInstance.interceptors.request.use((config) => {

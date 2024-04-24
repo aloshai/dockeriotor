@@ -46,7 +46,7 @@ export function WorkerCard({ worker, onDelete }: any) {
         confirmButtonText: "Update",
         cancelButtonText: "Cancel",
         background: "#101010",
-        preConfirm: (value) => {
+        preConfirm: () => {
           const command = document.getElementById(
             "command"
           ) as HTMLInputElement;

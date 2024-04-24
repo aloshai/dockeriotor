@@ -1,0 +1,58 @@
+version: '3.7'
+
+networks:
+  backend:
+    driver: bridge
+
+services:
+  api:
+    build:
+      context: ./dockeriotor-backend/
+      dockerfile: Dockerfile
+    networks:
+      - backend
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - MONGO_URI=mongodb://mongo:27017/dockeriotor
+    ports:
+      - "3000:3000"
+    restart: always
+  mongo:
+    image: "mongo:latest"
+    networks:
+      - backend
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+  redis:
+    image: "redis:alpine"
+    networks:
+      - backend
+    ports:
+      - "6379:6379"
+  telegram-bot:
+    build: 
+      context: ./dockeriotor-telegram-bot
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    restart: always
+  frontend:
+    build:
+      context: ./dockeriotor-frontend/
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+    restart: always
+  discord-bot:
+    build: 
+      context: ./dockeriotor-discord-bot
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    restart: always
