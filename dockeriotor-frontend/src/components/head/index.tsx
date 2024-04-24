@@ -146,7 +146,7 @@ export function FeatureCard({ title, description, extra, redirect, tag }: any) {
 
         <h3 className="text-xl font-semibold">{title}</h3>
       </div>
-      {extra && <h6 className="text-secondary mt-4">Dockerioter#7909</h6>}
+      {extra && <h6 className="text-secondary mt-4">{extra}</h6>}
 
       <hr className="my-4 border-gray-black" />
       <p className="mt-4 text-secondary">{description}</p>
