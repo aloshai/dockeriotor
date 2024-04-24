@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useUser } from "../../lib/auth";
 import instance from "../../lib/axios";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 export function CreateWorker() {
   const user = useUser();
@@ -38,6 +39,23 @@ export function CreateWorker() {
 
   return (
     <div className="flex flex-col max-w-screen-lg w-full mx-auto mt-14">
+      <Link to="/workers" className="flex mb-8 gap-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6 stroke-[#eaebec80]"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>
+        <span className="text-secondary">Back to Workers</span>
+      </Link>
       <h1 className="text-4xl font-semibold">Create Dockeriotor Client</h1>
 
       <div className="flex md:flex-row flex-col mt-12 gap-12">

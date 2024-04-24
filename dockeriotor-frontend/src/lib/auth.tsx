@@ -5,6 +5,12 @@ export const useUser = () => {
   const query = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
+      const accessToken = localStorage.getItem("accessToken");
+
+      if (!accessToken) {
+        return null;
+      }
+
       const response = await instance.get("/auth/profile");
       const responseData = response.data;
 

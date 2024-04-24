@@ -45,7 +45,7 @@ export function Navbar() {
         </a>
       </div>
       <div className="w-72 flex justify-end">
-        {!user.isSuccess && (
+        {!user.data && (
           <Link
             to={"/"}
             className="text-sm px-8 font-semibold py-2 rounded-full border-2 border-white/20 hover:bg-white hover:text-black transition flex items-center"
@@ -53,7 +53,7 @@ export function Navbar() {
             Login
           </Link>
         )}
-        {user.isSuccess && (
+        {user.data && (
           <Link
             to="/workers"
             className="text-sm px-8 font-semibold py-2 rounded-full border-2 border-white/20 hover:bg-white hover:text-black transition flex items-center"
