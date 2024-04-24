@@ -23,9 +23,10 @@ export function Head() {
           Remote Worker Management Tool
         </h1>
         <p className="text-center lg:w-1/2 mt-8 text-sm text-white/80">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-          quibusdam quis repellat eum veniam, vel nostrum deleniti voluptatibus,
-          cupiditate porro sapiente dolore nulla autem fugit?
+          Dockeriotor is a cloud-based tool for managing IO.NET Workers across
+          three platforms. With Dockeriotor, you can easily command and control
+          your Workers, streamlining your workflow for maximum efficiency and
+          flexibility.
         </p>
 
         <div className="flex md:flex-row flex-col items-center gap-4 md:gap-8 mt-12">
