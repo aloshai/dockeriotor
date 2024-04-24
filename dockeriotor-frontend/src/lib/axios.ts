@@ -2,7 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
   // @ts-ignore
-  baseURL: import.meta.env.VITE_API_URL && "https://api.dockeriotor.com",
+  baseURL: import.meta.env.VITE_API_URL || "https://api.dockeriotor.com",
 });
 
 instance.interceptors.request.use((config) => {
